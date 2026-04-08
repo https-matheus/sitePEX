@@ -1,0 +1,357 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* PALETA ACESSÍVEL E SUAVE */
+    :root {
+      --bg-geral: #F9FCF8;
+      --azul-suave: #C2E0F0;      /* tons de confiança */
+      --verde-agua: #B8E1D9;       /* acolhedor */
+      --azul-claro: #D4ECF2;
+      --azul-profundo: #2C6E7E;   /* contraste moderado */
+      --verde-destaque: #439A86;
+      --texto-escuro: #1E2F32;
+      --texto-claro: #FEFCF3;
+      --cinza-claro: #EFF3F0;
+      --sombra-leve: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --foco-outline: 3px solid #2C6E7E;
+      --border-radius-card: 24px;
+      --fonte-principal: 'Segoe UI', system-ui, 'Roboto', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      font-family: var(--fonte-principal);
+      background-color: var(--bg-geral);
+      color: var(--texto-escuro);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* ACESSIBILIDADE: foco visível e skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--azul-profundo);
+      color: white;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0 0 8px 0;
+      z-index: 100;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 2px solid white;
+    }
+
+    /* CONTAINER RESPONSIVO */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* CABEÇALHO */
+    .header {
+      background: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(0px);
+      border-bottom: 2px solid var(--azul-suave);
+    }
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo-icon {
+      background: var(--verde-destaque);
+      width: 42px;
+      height: 42px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .logo:hover .logo-icon {
+      transform: scale(1.02);
+    }
+    .logo-text {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--azul-profundo);
+      letter-spacing: -0.3px;
+    }
+    .logo span:last-child {
+      font-weight: 500;
+      color: var(--verde-destaque);
+    }
+
+    /* MENU */
+    .menu {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .menu a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--azul-profundo);
+      padding: 0.5rem 0.2rem;
+      transition: all 0.2s ease;
+      border-bottom: 2px solid transparent;
+      font-size: 1rem;
+    }
+    .menu a:hover {
+      border-bottom-color: var(--verde-destaque);
+      color: var(--verde-destaque);
+    }
+    .menu a:focus-visible {
+      outline: var(--foco-outline);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    /* BOTÃO HAMBURGUER (mobile) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--azul-profundo);
+      transition: 0.2s;
+    }
+    .menu-toggle:focus-visible {
+      outline: var(--foco-outline);
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #E6F4F1 0%, #D3EAE5 100%);
+      border-radius: 0 0 40px 40px;
+      margin-top: 0.5rem;
+      padding: 3rem 0;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1.2;
+      min-width: 260px;
+    }
+    .hero-content h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      color: var(--azul-profundo);
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.8rem;
+      color: #2c4e55;
+    }
+    .hero-btn {
+      display: inline-block;
+      background-color: var(--verde-destaque);
+      color: white;
+      font-weight: 700;
+      padding: 0.85rem 2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .hero-btn:hover {
+      background-color: #2f7a64;
+      transform: translateY(-2px);
+    }
+    .hero-btn:focus-visible {
+      outline: var(--foco-outline);
+      outline-offset: 3px;
+    }
+    .hero-illustration {
+      flex: 0.8;
+      background: rgba(255,255,240,0.5);
+      border-radius: 48px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 5rem;
+      backdrop-filter: blur(2px);
+    }
+    .hero-illustration span {
+      font-size: 5rem;
+      display: inline-block;
+    }
+
+    /* SEÇÃO RESUMO E OBJETIVOS */
+    .resumo {
+      padding: 4rem 0;
+    }
+    .card-objetivos {
+      background: white;
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--sombra-leve);
+      padding: 2rem 2rem;
+      border-left: 8px solid var(--verde-agua);
+      transition: transform 0.2s;
+    }
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--azul-profundo);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 3px;
+      background: var(--verde-destaque);
+      border-radius: 4px;
+      margin-top: 0.25rem;
+    }
+    .descricao-clara {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 1rem 0;
+      line-height: 1.6;
+    }
+    .pilares {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .pilar {
+      flex: 1;
+      background: var(--cinza-claro);
+      padding: 1.4rem;
+      border-radius: 28px;
+      transition: all 0.2s;
+    }
+    .pilar h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--azul-profundo);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pilar p {
+      font-size: 1rem;
+      color: #2c5c63;
+    }
+    .pilar:focus-within {
+      outline: 2px solid var(--azul-profundo);
+    }
+
+    /* RODAPÉ */
+    .footer {
+      background-color: #DDEAE6;
+      margin-top: 2rem;
+      padding: 2.5rem 0 1.5rem;
+      border-top: 1px solid #C2D6D0;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    .footer-info h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--azul-profundo);
+    }
+    .footer-info p, .footer-info address {
+      font-style: normal;
+      color: #2c5b5b;
+      margin-top: 0.3rem;
+    }
+    .footer-copy {
+      text-align: center;
+      padding-top: 2rem;
+      font-size: 0.85rem;
+      border-top: 1px solid #B9D0C8;
+      margin-top: 1rem;
+    }
+    
+    a {
+      color: var(--azul-profundo);
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 780px) {
+      .menu-toggle {
+        display: block;
+      }
+      .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 1rem 0;
+        margin-top: 1rem;
+        border-radius: 24px;
+        gap: 0.8rem;
+        text-align: center;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .nav-bar {
+        position: relative;
+      }
+      .hero-content h1 {
+        font-size: 1.9rem;
+      }
+      .pilares {
+        flex-direction: column;
+      }
+      .hero-illustration span {
+        font-size: 3.5rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.7rem;
+      }
+      .hero-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Incluir Jogos - Jogo: Atravessar a Rua | Educação para segurança no trânsito</title>
+  <meta name="description" content="Jogo educativo de atravessar a rua com semáforo: aprenda segurança no trânsito e desenvolva autonomia. Acessível e divertido.">
+  <link rel="stylesheet" href="styles/style_pag4.css">
+</head>
+<body>
+
+<a href="#gameCanvas" class="skip-link">Pular para o jogo</a>
+
+<header class="header">
+  <div class="container nav-bar">
+    <a href="index.html" class="logo">
+      <div class="logo-icon" aria-hidden="true">🎮</div>
+      <div class="logo-text">Incluir<span>Jogos</span></div>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <nav aria-label="Menu principal">
+      <ul class="menu" id="menuNav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="pag2.html">Missão, Visão e Valores</a></li>
+        <li><a href="pag3.html">Equipe</a></li>
+        <li><a href="pag4.html" aria-current="page">Jogo: Atravessar a Rua</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container game-section">
+    <div style="text-align: center; margin-bottom: 1rem;">
+      <span class="intro-badge" style="background:var(--azul-suave); padding:0.2rem 1rem; border-radius:40px;">🚦 Aprendizado e Diversão</span>
+      <h1 style="color:var(--azul-profundo); margin-top:0.5rem;">Atravessar com Segurança</h1>
+      <p>Clique na área do jogo para andar. <strong>Só atravesse com o semáforo VERDE!</strong> Aprenda sobre cidadania e segurança no trânsito.</p>
+    </div>
+    <div class="game-container">
+      <canvas id="gameCanvas" width="800" height="400" style="width:100%; height:auto; max-width:800px; aspect-ratio:800/400" aria-label="Jogo de atravessar a rua. Clique para mover o personagem. Sinal verde permite travessia."></canvas>
+      <div class="game-controls">
+        <button class="btn-jogo" id="reiniciarBtn">🔄 Reiniciar Jogo</button>
+        <button class="btn-jogo" id="abrirMenuBtn">⚙️ Menu Principal</button>
+      </div>
+      <div id="messageArea" class="game-message" style="display: none;"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div><h4>Incluir Jogos</h4><p>Jogos para autonomia e inclusão.</p></div>
+      <div><h4>Contato</h4><address>contato@incluirjogos.com.br<br>(62) 98765-4321</address></div>
+    </div>
+    <div class="footer-copy">© 2025 Incluir Jogos – Aprender brincando, com acessibilidade.</div>
+  </div>
+</footer>
+
+<!-- OVERLAY DO MENU INICIAL (Dinâmico) -->
+<div id="startMenuOverlay" class="menu-overlay">
+  <div class="menu-card">
+    <h2>🚦 Atravessar a Rua</h2>
+    <p style="margin-bottom: 1rem;">Clique na tela para mover o personagem.<br><strong>⚠️ Só atravesse no sinal VERDE!</strong></p>
+    <button id="btnIniciar">🎮 Iniciar</button>
+    <button id="btnConfig">⚙️ Configurações</button>
+    <button id="btnSair">🚪 Sair</button>
+    <div id="configPanel" style="display: none; margin-top: 1rem;">
+      <div class="volume-slider">
+        <label>🔊 Volume: </label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.6">
+        <span id="volumeValue">60%</span>
+      </div>
+      <button id="fecharConfig" style="background:var(--azul-profundo); width:auto; padding:0.4rem 1rem;">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/script_pag4.js"></script>
+</body>
+</html>
