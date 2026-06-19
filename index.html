@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Skip Link para acessibilidade direta ao conteúdo principal -->
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
   <header class="header">
@@ -33,7 +32,6 @@
   </header>
 
   <main id="conteudo-principal">
-    <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-titulo">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -48,7 +46,6 @@
       </div>
     </section>
 
-    <!-- Resumo e Objetivos (texto claro e pedagógico) -->
     <section class="resumo container" aria-labelledby="objetivos-titulo">
       <div class="card-objetivos">
         <h2 id="objetivos-titulo" class="section-title">Propósito & Inclusão</h2>
@@ -75,7 +72,6 @@
       </div>
     </section>
 
-    <!-- Mini seção de chamada para matemática financeira e AVD – sem exageros, apenas conteúdo leve -->
     <section class="container" style="margin-bottom: 3rem;" aria-label="Diferenciais">
       <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
         <div style="background: white; border-radius: 32px; padding: 1.2rem 1.8rem; flex:1; min-width: 200px; text-align: center; box-shadow: var(--sombra-leve);">
@@ -126,5 +122,16 @@
   </div>
 </footer>
   <script src="/script_index.js"></script>
-</body>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  </body>
 </html>
